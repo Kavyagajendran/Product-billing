@@ -2,7 +2,7 @@
 
 A modern, full-stack web-based billing application tailored for retail stores, optimizing point-of-sale operations. Designed specifically to handle weight-based pricing (e.g., spices, loose goods), the system simplifies product management, auto-generates barcodes, enables real-time scanning, and manages sales dashboards with dynamic customer pricing.
 
-## 🚀 Features
+## Features
 
 - **Admin Product Management (CRUD):** 
   Easily add, view, update, and remove products. Assign prices (e.g., per 50g) and custom barcode IDs or let the system auto-generate standard 1D CODE-128 barcodes.
@@ -17,7 +17,7 @@ A modern, full-stack web-based billing application tailored for retail stores, o
 - **Professional Invoicing:** 
   Generates clean, print-ready invoices containing unique invoice numbers, itemized lists, and grand totals.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 **Frontend:**
 - [React.js (Vite)](https://vitejs.dev/) - Fast, modern UI framework.
@@ -31,7 +31,7 @@ A modern, full-stack web-based billing application tailored for retail stores, o
 - [Node.js](https://nodejs.org/) & [Express.js](https://expressjs.com/) - Scalable RESTful API server.
 - [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/) - NoSQL database and object modeling.
 
-## 📦 Project Structure
+## Project Structure
 
 ```text
 ├── backend/            # Express.js server and API routes
@@ -50,7 +50,7 @@ A modern, full-stack web-based billing application tailored for retail stores, o
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v16+ recommended)
@@ -85,14 +85,14 @@ A modern, full-stack web-based billing application tailored for retail stores, o
    npm run dev
    ```
 
-## 💡 Workflow Overview
+## Workflow Overview
 1. **Adding Inventory:** Admins log in, add products with prices, and print generated barcodes to attach to store items.
 2. **Scanning:** Cashiers scan products via webcam during checkout. The cart populates instantly.
 3. **Weight & Price:** The cashier enters the exact weight. The system dynamically computes the cost.
 4. **Checkout:** Complete the transaction to save it to the database and print a professional invoice.
 5. **Review:** Store owners can view historical sales and aggregated monthly data in the Admin dashboard.
 
-## 🤝 Contributing
+## Contributing
 Contributions, issues, and feature requests are welcome!
 
 
