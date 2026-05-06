@@ -1,0 +1,74 @@
+====================================================================
+               MODERN BARCODE BILLING MANAGEMENT SYSTEM
+====================================================================
+
+OVERVIEW:
+---------
+This project is a full-stack, web-based billing application designed 
+for retail stores or shops (specifically optimized for weight-based 
+pricing, like spices or loose goods). It uses modern web technologies 
+to allow shopkeepers to manage products, automatically generate 1D 
+barcodes, scan products via webcam, and manage sales dashboards.
+
+TECHNOLOGY STACK:
+-----------------
+* Frontend: React.js (Vite), CSS3, html5-qrcode (Scanner), react-barcode
+* Backend: Node.js, Express.js
+* Database: MongoDB
+* Communication: Axios REST API
+
+====================================================================
+                        CORE FEATURES
+====================================================================
+
+1. ADMIN PRODUCT MANAGEMENT (CRUD)
+   - Add Products: Input product name, price (per 50g), and a custom barcode ID (or auto-generate one).
+   - Automatic Barcode Generation: The system instantly generates a standard 1D CODE-128 barcode for the product.
+   - View Products: A clean table displays all added products along with their visual barcode.
+   - Edit/Delete: Easily modify product pricing or remove outdated items from the database.
+
+2. WEBCAM BARCODE SCANNER
+   - Real-Time Scanning: Uses the device's webcam to scan 1D barcodes instantly.
+   - Highly Optimized: The scanner is restricted to CODE-128 formats and uses the full screen feed, ensuring lightning-fast recognition even from mobile screens.
+   - Auto-Add: Scanning a barcode automatically fetches the product from the database and adds it to the active bill.
+
+3. MANUAL BILLING OVERRIDE
+   - If the scanner is broken or a barcode is missing, users can manually select products from a dynamic dropdown list populated directly from the database.
+
+4. DYNAMIC CART & INVOICING
+   - Weight Calculation: Enter weight in either Grams (g) or Kilograms (kg). The system automatically calculates the price based on the base rate (price per 50g).
+   - Invoice Generation: Generates a clean, professional, print-ready invoice showing the date, unique invoice number, itemized list, and grand total.
+
+5. SALES & BILLS DASHBOARD
+   - Persistent Records: Every finalized bill is saved to the MongoDB database.
+   - Monthly Aggregation: Bills are automatically grouped by Month & Year (e.g., "May 2026").
+   - Grand Totals: The system calculates and displays the total revenue generated for each specific month.
+   - Itemized Viewing: A "View" button on any past bill opens a modal showing exactly what was sold, weights, and rates.
+   - Record Deletion: Admins can delete faulty or test bills, which instantly updates the monthly grand total.
+
+====================================================================
+                        HOW IT WORKS (WORKFLOW)
+====================================================================
+
+STEP 1: ADDING INVENTORY
+- The Admin navigates to the "Admin" -> "Products Management" tab.
+- They enter a new product (e.g., "Premium Coffee Beans", $5.00 per 50g).
+- They click "Save Product". The system generates a barcode (e.g., P001).
+- The shopkeeper can print this barcode and stick it on the coffee bin.
+
+STEP 2: SCANNING & BILLING A CUSTOMER
+- The cashier navigates to the "Billing" tab.
+- They click "Start Scanner" and hold the customer's item (with the barcode) up to the webcam.
+- The scanner reads "P001" and instantly adds "Premium Coffee Beans" to the cart.
+- The cashier weighs the beans (e.g., 250g) and enters "250" into the cart's weight input. 
+- The system automatically calculates the price (5 * 5 = $25.00).
+
+STEP 3: GENERATING THE INVOICE
+- The cashier clicks "Generate Final Bill".
+- The system saves the bill to the database and displays a clean, printable Invoice.
+- The cashier can print it for the customer and click "New Bill" for the next person in line.
+
+STEP 4: REVIEWING SALES
+- At the end of the month, the owner checks the "Admin" -> "Bills & Sales" tab.
+- They instantly see "May 2026: GRAND TOTAL 2800.00".
+- They can browse the list of bills to see exactly what items sold on which days.
